@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Web Dev Project 1</title>
+  <link rel='stylesheet' href='https://github.com/twbs/bootstrap/releases/download/v3.4.1/bootstrap-3.4.1-dist.zip'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--Imports bootstrap-->
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+
+<!--Imports icons-->
+<script src="https://kit.fontawesome.com/f329e43eb6.js" crossorigin="anonymous"></script>
+
+<!--Imports datepicker-->
+<link rel=”stylesheet” href=”https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css”><script src=”https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js”></script>
+
+<!--Imports jquery-->
+<script src="jquery-3.7.1.min.js"></script>
+
+<!--Makes the title red-->
+<style> 
+h1{
+  color: red;
+}
+</style>
+
+<style> 
+  /* Low radio button spacing */
+  #radio1{
+  margin-bottom: 10px;
+}
+</style>
+
+
+<style> 
+  /* Medium radio button spacing*/
+#radio2 {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+</style>
+
+<style> 
+  /* High radio button spacing */
+#radio3 {
+margin-bottom: 10px;
+}
+</style>
+
+<style> 
+#otherlabel {
+  margin-top: 10px;
+}
+</style>
+
+<style>
+    /* Blue toast for reset button */
+    #toastReset {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      min-width: 200px;
+      background-color: royalblue;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1050;
+    }
+
+    /* Shows toast */
+    #toastReset.show {
+      opacity: 1;
+    }
+  </style>
+
+<style>
+    /* Red error toast for no cost */
+    #submitNoCost {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      min-width: 200px;
+      background-color: tomato;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1050;
+    }
+
+    /* Shows toast */
+    #submitNoCost.show {
+      opacity: 1;
+    }
+  </style>
+
+<style>
+    /* Green toast for successful form submission */
+    #submitSuccess {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      min-width: 200px;
+      background-color: green;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1050;
+    }
+
+    /* Shows toast */
+    #submitSuccess.show {
+      opacity: 1;
+    }
+  </style>
+
+<style>
+    /* Red error toast for negative cost */
+    #submitNegativeCost {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      min-width: 200px;
+      background-color: tomato;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1050;
+    }
+
+    /* Shows toast */
+    #submitNegativeCost.show {
+      opacity: 1;
+    }
+  </style>
+
+<!--Title of the form-->
+<h1>Bootstrap Booking Form</h1>
+
+<!--Instructions of the form-->
+<div class= "well well-md">Fill out the form and click the submit button when complete</div>
+
+
+<!--Name info panel head-->
+<div class="col-md-6">
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h5>User:</h5> 
+  </div>
+  
+  <!--Name info panel body-->
+<div class="panel-body">
+    <form class="form-horizontal"action="/action_page.php">
+      
+ <!--Horizontal form for username-->
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="username">Username:</label>
+        <div class="col-sm-9">
+          <input type="username" class ="form-control" id="form1" placeholder="Type username...">
+        </div>
+          </div>
+
+      <!--Horizontal form for first name-->
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="username">First Name:</label>
+        <div class="col-sm-9">
+          <input type="first name" class ="form-control" id="form2" placeholder="Type first name...">
+        </div>
+          </div>
+    
+<!--Horizontal form for last name-->
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="last name">Last Name:</label>
+    <div class="col-sm-9">
+      <input type="last name" class ="form-control" id="form3" placeholder="Type last name...">
+  </div>
+ </div>
+   </form>
+     </div>
+       </div>
+  
+  <!--Contact info panel head-->
+  <div class="col-6-md-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h5>Contact:</h5>
+    </div>
+  
+  <!--Contact info panel body-->
+  <div class="panel-body">
+        
+        <!--input group form for phone#-->
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa-solid fa-phone"></i></span>
+          <input id="form4"type="text" class="form-control" aria-label="phone #" placeholder="Type phone#...">
+</div>
+        
+        <!--Input group for fax#-->
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa-solid fa-fax"></i>
+          </span>
+          <input id="form5"type="text" class="form-control" aria-label="Fax #" placeholder="Type fax#...">
+</div>
+        
+        <!--Input group for email-->
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa-solid fa-envelope"></i>
+          </span>
+          <input id="form6"type="text" class="form-control" aria-label="email" placeholder="Type email...">
+          </div>
+            </div>
+            </div>
+      </div>
+    
+    <!--Schedule panel head-->
+  <div class="col-6-md-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h5>Schedule:</h5>
+    </div>
+  
+  <!--Schedule panel body-->
+  <div class="panel-body">
+        
+    <!--Drop down menu able to select up to 5 adults-->
+        <div class="form-group">
+  <label for="Adults">Adults:</label>
+  <select class="form-control" id="Adults">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+</div>
+
+    <div class="col-sm-6"> 
+      <label>Check-In:</label> 
+      <div class="input-group date"> 
+        <input id="datepicker1" class="form-control" type="text" readonly> 
+        <span class="input-group-addon"> 
+          <i class="fa-regular fa-calendar"></i> 
+        </span> 
+      </div> 
+    </div> 
+    
+    <div class="col-sm-6"> 
+      <label>Check-Out:</label> 
+      <div class="input-group date"> 
+        <input id="datepicker2" class="form-control" type="text" readonly> 
+        <span class="input-group-addon"> 
+          <i class="fa-regular fa-calendar"></i> 
+        </span> 
+      </div> 
+    </div>
+    
+    <!--Installing Jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="crossorigin="anonymous">
+    </script>
+    
+    <!--Displays how many days the user has booked-->
+    <div class="col-md-6">
+      <label>Days:</label>
+    <input id="Days" class="form-control" type="text"readonly placeholder= "Displays days..."></input>
+    </div>
+    
+    <!--Displays how much money the user owes after booking-->
+    <div class="col-md-6">
+      <label>Cost($):</label>
+    <input id="Cost" class="form-control" type="text" readonly placeholder= "Displays cost...">
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--Other panel head-->
+    <div class="col-6 col-md-6">
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h5>Other:</h5>
+    </div>
+  
+  <!--Other panel body-->
+  <div class="panel-body">
+      
+    <!--Input form for the user's message-->
+    <div class="form-group">
+  <label for="comment">Message:</label>
+  <textarea id="form7" class="form-control" rows="25" id="comment" placeholder="Type message here..."></textarea>
+</div>
+    
+    <!--Horizontal stepped range bar-->
+    <label for="Range" class="form-label">Range:</label>
+<input data-provide="slider" type="Range" class="form-range" min="0" step="5"id="Range">
+    
+    <!--Radio buttons for priority low, medium, and high-->
+    <div id="otherlabel">
+      <label>Priority:</label>    
+    </div>
+    <form class="form-inline" action="/action_page.php">
+   
+      <!--Low-->
+  <div class="radio">
+    <div id="radio1">
+    <label><input type="radio" name="optradio" checked>   Low</label>
+        </div>
+</div>
+      
+      <!--Medium-->
+<div id="radio2" class="radio">
+  <label><input type="radio" name="optradio">  Med</label>
+</div>
+      
+      <!--High-->
+<div id ="radio3" class="radio">
+  <label><input type="radio" name="optradio">  High</label>
+</div>
+      </div>
+      </div>
+      
+      <!--Button that allows the user to clear all fields-->
+      <div class="col-md-6">
+      <button onclick="showResetToast()" type="button" class="btn btn-primary btn-block">
+        <i class="fa-solid fa-eraser"></i>  Reset</button>
+      </div>
+      
+      <!--Toast for field clear-->
+      <div id="toastReset" class="toast">
+    Fields successfully cleared!
+  </div>
+      
+      <!--Button that checks if all of the form is valid, and displays a success if so-->
+      <div class="col-md-6">
+      <button onclick="costValidation()" type="button" class="btn btn-success btn-block"><i class="fa-solid fa-paper-plane"></i>    Submit</button>
+        
+        <!--Toast for no cost calculation-->
+        <div id="submitNoCost"class="toast">
+    <div class="toast-body">
+      No cost was calculated
+    </div>
+  </div>
+        
+        <!--Toast for negative cost calculation-->
+        <div id="submitNegativeCost"class="toast">
+    <div class="toast-body">
+      Cost is negative
+    </div>
+  </div>
+        
+        <!--Toast for successful form submission-->
+        <div id="submitSuccess"class="toast">
+    <div class="toast-body">
+      Form successfully submitted
+    </div>
+  </div>
+        
+        <!--Imports popper-->
+    <script src=
+"https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity=
+"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+      
+        <!--Imports bootstrap 4-->
+    <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity=
+"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+      
+        <!--Imports the datepicker-->
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+    </script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
